@@ -50,7 +50,8 @@ class NirValidatorTest extends ConstraintValidatorTestCase
         $this->buildViolation($constraint->lengthMessage)
             ->setInvalidValue($value)
             ->setCode(Nir::LENGTH_ERROR)
-            ->assertRaised();
+            ->assertRaised()
+        ;
     }
 
     public function testDoesNotAcceptWrongNir(): void
@@ -63,7 +64,8 @@ class NirValidatorTest extends ConstraintValidatorTestCase
         $this->buildViolation($constraint->nirMessage)
             ->setInvalidValue($value)
             ->setCode(Nir::NIR_INVALID)
-            ->assertRaised();
+            ->assertRaised()
+        ;
     }
 
     public function testDoesNotAcceptWrongKeyOfNir(): void
@@ -76,7 +78,8 @@ class NirValidatorTest extends ConstraintValidatorTestCase
         $this->buildViolation($constraint->nirKeyMessage)
             ->setInvalidValue($value)
             ->setCode(Nir::NIR_KEY_INVALID)
-            ->assertRaised();
+            ->assertRaised()
+        ;
     }
 
     public function testExpectsConstraintCompatibleType(): void

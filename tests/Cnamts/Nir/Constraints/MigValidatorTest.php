@@ -47,7 +47,8 @@ class MigValidatorTest extends ConstraintValidatorTestCase
         $this->buildViolation($constraint->lengthMessage)
             ->setInvalidValue($value)
             ->setCode(Mig::LENGTH_ERROR)
-            ->assertRaised();
+            ->assertRaised()
+        ;
     }
 
     public function testDoesNotAcceptWrongMig(): void
@@ -60,7 +61,8 @@ class MigValidatorTest extends ConstraintValidatorTestCase
         $this->buildViolation($constraint->migMessage)
             ->setInvalidValue($value)
             ->setCode(Mig::MIG_INVALID)
-            ->assertRaised();
+            ->assertRaised()
+        ;
     }
 
     public function testExpectsConstraintCompatibleType(): void

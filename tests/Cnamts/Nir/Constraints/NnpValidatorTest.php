@@ -46,7 +46,8 @@ class NnpValidatorTest extends ConstraintValidatorTestCase
         $this->buildViolation($constraint->lengthMessage)
             ->setInvalidValue($value)
             ->setCode(Nnp::LENGTH_ERROR)
-            ->assertRaised();
+            ->assertRaised()
+        ;
     }
 
     public function testDoesNotAcceptWrongNnp(): void
@@ -59,7 +60,8 @@ class NnpValidatorTest extends ConstraintValidatorTestCase
         $this->buildViolation($constraint->nnpMessage)
             ->setInvalidValue($value)
             ->setCode(Nnp::NNP_INVALID)
-            ->assertRaised();
+            ->assertRaised()
+        ;
     }
 
     public function testExpectsConstraintCompatibleType(): void
@@ -90,6 +92,7 @@ class NnpValidatorTest extends ConstraintValidatorTestCase
         $this->buildViolation($constraint->nnpMessage)
             ->setInvalidValue($value)
             ->setCode(Nnp::NNP_INVALID)
-            ->assertRaised();
+            ->assertRaised()
+        ;
     }
 }
