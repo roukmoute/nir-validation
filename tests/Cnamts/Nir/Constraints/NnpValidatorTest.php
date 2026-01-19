@@ -6,7 +6,6 @@ namespace Tests\Cnamts\Nir\Constraints;
 
 use Cnamts\Nir\Constraints\Nnp;
 use Cnamts\Nir\Constraints\NnpValidator;
-use PHPUnit\Framework\Attributes\DataProvider;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidatorInterface;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -19,7 +18,9 @@ class NnpValidatorTest extends ConstraintValidatorTestCase
         return new NnpValidator();
     }
 
-    #[DataProvider('validNnpProvider')]
+    /**
+     * @dataProvider validNnpProvider
+     */
     public function testAcceptsValidNnps(string $nnp): void
     {
         $this->validator->validate($nnp, new Nnp());

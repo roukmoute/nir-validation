@@ -6,7 +6,6 @@ namespace Tests\Cnamts\Nir\Constraints;
 
 use Cnamts\Nir\Constraints\Nir;
 use Cnamts\Nir\Constraints\NirValidator;
-use PHPUnit\Framework\Attributes\DataProvider;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidatorInterface;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -19,7 +18,9 @@ class NirValidatorTest extends ConstraintValidatorTestCase
         return new NirValidator();
     }
 
-    #[DataProvider('validNirProvider')]
+    /**
+     * @dataProvider validNirProvider
+     */
     public function testAcceptsValidNirs(string $nir): void
     {
         $this->validator->validate($nir, new Nir());

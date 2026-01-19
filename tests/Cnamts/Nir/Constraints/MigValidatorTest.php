@@ -6,7 +6,6 @@ namespace Tests\Cnamts\Nir\Constraints;
 
 use Cnamts\Nir\Constraints\Mig;
 use Cnamts\Nir\Constraints\MigValidator;
-use PHPUnit\Framework\Attributes\DataProvider;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidatorInterface;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -19,7 +18,9 @@ class MigValidatorTest extends ConstraintValidatorTestCase
         return new MigValidator();
     }
 
-    #[DataProvider('validMigProvider')]
+    /**
+     * @dataProvider validMigProvider
+     */
     public function testAcceptsValidMigs(string $mig): void
     {
         $this->validator->validate($mig, new Mig());
